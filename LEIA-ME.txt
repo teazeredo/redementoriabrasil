@@ -1,0 +1,38 @@
+REDE MENTORIA BRASIL - LANDING PAGE
+
+COMO USAR
+- Abra index.html no navegador para visualizar (funciona sem internet).
+- Para publicar, envie todo o conteúdo desta pasta (index.html, styles.css e assets/)
+  para a raiz da hospedagem. Mantenha a estrutura de pastas.
+
+ARQUIVOS
+- index.html   Conteúdo e estrutura da página.
+- styles.css   Cores, tipografia e layout (variáveis de cor no início do arquivo).
+- assets/img   Logotipo (recorte circular da marca principal), favicons, banners
+               horizontal e vertical, versão em traço e imagem de compartilhamento.
+- assets/fonts Poppins (títulos) e Inter (texto), hospedadas na própria pasta.
+               Nenhuma chamada a serviços externos de fontes.
+
+LINKS USADOS
+- Pesquisa do piloto: https://rede-mentoria-brasil.zite.so
+- WhatsApp: +55 41 99911-8887, com a mensagem inicial "Contato Landing Page -
+  Rede Mentoria Brasil. Eu gostaria de mais informações:"
+- E-mail: contato@redementoriabrasil.com.br
+- Instagram: @redementoriabrasil
+
+PENDÊNCIAS ANTES DE PUBLICAR
+1. Imagem de compartilhamento (og:image): depois de definir o domínio, troque
+   "assets/img/og-image.jpg" no index.html pelo endereço completo (https://...).
+2. Revisar os textos de LGPD (FAQ e rodapé) e o aviso sobre o fundo anjo com
+   apoio jurídico.
+3. Confirmar o dado de 81% (indicação no emprego atual, jovens de 25 a 29 anos):
+   a linha do PDF de origem estava truncada.
+4. Confirmar que o canal de reporte de irregularidades (e-mail de contato) está
+   ativo e que a coordenação analisa os relatos.
+5. Os dados estatísticos vêm do documento "Rede Nacional de Mentoria - Pitch".
+   Vale conferir cada fonte antes de divulgar.
+
+IDENTIDADE VISUAL
+- Segue a especificação v1.0: proporção aproximada de 60% Névoa/branco, 25% azul,
+  15% verde; um destaque verde por tela; texto fora das linhas verdes da rede.
+- A marca não é usada sobre fundo escuro (versão ainda pendente).

@@ -1,242 +1,419 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rede Mentoria Brasil | Conectando Jovens e Profissionais</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --azul-mentoria: #285B8A;
-            --verde-mentoria: #278865;
-            --azul-profundo: #205380;
-            --verde-profundo: #187858;
-            --nevoa: #F5F6F1;
-            --nevoa-verde: #E5EFEE;
-            --tinta: #1A2B3C;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rede Mentoria Brasil | Conectando experiência a quem está começando</title>
+  <meta name="description" content="A Rede Mentoria Brasil conecta jovens em início de carreira a profissionais experientes. Piloto aberto, sem custo, para maiores de 18 anos.">
+  <meta name="theme-color" content="#285B8A">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Rede Mentoria Brasil">
+  <meta property="og:description" content="Experiência que abre caminho para quem está começando. Participe do piloto.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
 
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--nevoa);
-            color: var(--tinta);
-            line-height: 1.6;
-        }
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-        header {
-            background-color: #ffffff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--azul-mentoria);
-        }
-
-        .logo-area img {
-            height: 40px;
-            width: auto;
-        }
-
-        .logo-area span {
-            color: var(--verde-mentoria);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--tinta);
-            margin-left: 24px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--azul-mentoria);
-        }
-
-        .hero {
-            padding: 80px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--nevoa) 0%, var(--nevoa-verde) 100%);
-            max-width: 900px;
-            margin: 40px auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            color: var(--azul-mentoria);
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--tinta);
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            background-color: var(--verde-mentoria);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(39, 136, 101, 0.3);
-        }
-
-        .btn:hover {
-            background-color: var(--verde-profundo);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--azul-mentoria);
-            margin-bottom: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-top: 5px solid var(--azul-mentoria);
-        }
-
-        .card.verde {
-            border-top-color: var(--verde-mentoria);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--tinta);
-            font-size: 1.3rem;
-        }
-
-        footer {
-            background-color: var(--azul-profundo);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-        }
-
-        footer p {
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            header { padding: 15px 20px; }
-            nav { display: none; }
-        }
-    </style>
+  <link rel="preload" href="assets/fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 
-    <header>
-        <div class="logo-area">
-            <img src="images/logo.png" alt="Rede Mentoria Brasil">
-            REDE MENTORIA <span>BRASIL</span>
+  <header class="topo">
+    <div class="topo__interno">
+      <a class="marca" href="#inicio" aria-label="Rede Mentoria Brasil, início">
+        <img src="assets/img/logo-marca-128.png" width="44" height="44" alt="">
+        <span>Rede Mentoria Brasil</span>
+      </a>
+      <nav class="menu" aria-label="Seções da página">
+        <a href="#porque">Por quê</a>
+        <a href="#para-quem">Quem participa</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#piloto">Piloto</a>
+        <a href="#faq">Perguntas</a>
+      </nav>
+      <a class="btn btn--azul btn--pequeno" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Participar do piloto</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__texto">
+        <h1>Experiência que abre caminho para quem está começando.</h1>
+        <p class="hero__sub">A Rede Mentoria Brasil conecta jovens em início de carreira a profissionais experientes, para aprender, resolver problemas e criar juntos.</p>
+        <div class="acoes">
+          <a class="btn btn--verde" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Quero participar do piloto</a>
+          <a class="btn btn--contorno" href="#porque">Por que a mentoria importa</a>
         </div>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#como-funciona">Como Funciona</a>
-            <a href="#contato" style="color: var(--verde-mentoria);">Participe</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Conectando o futuro através da experiência</h1>
-        <p>Aceleramos o desenvolvimento de jovens e profissionais em início de carreira, unindo suas inquietações a mentores experientes em todo o Brasil.</p>
-        <a href="#contato" class="btn">Quero fazer parte da rede</a>
+        <p class="hero__nota">Piloto aberto, sem custo, para maiores de 18 anos.</p>
+      </div>
+      <div class="hero__imagem">
+        <picture>
+          <source media="(max-width: 760px)" srcset="assets/img/hero-vertical.webp" width="768" height="1376">
+          <img src="assets/img/hero-horizontal.webp" width="1376" height="768" alt="" fetchpriority="high">
+        </picture>
+      </div>
     </section>
 
-    <section id="sobre" class="section">
-        <h2>O Propósito da Rede</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Para Mentorados</h3>
-                <p>Um espaço seguro, inclusivo e amoroso para destravar dúvidas, resolver problemas práticos e acelerar sua jornada profissional com quem já trilhou o caminho.</p>
-            </div>
-            <div class="card verde">
-                <h3>Para Mentores</h3>
-                <p>Oportunidade de compartilhar bagagem, impulsionar novos talentos e co-criar soluções inovadoras lado a lado com a nova geração.</p>
-            </div>
+    <!-- POR QUE -->
+    <section class="secao secao--branca" id="porque" aria-labelledby="t-porque">
+      <div class="contem porque">
+        <div class="porque__intro">
+          <h2 id="t-porque">Hoje, quem você conhece ainda decide quem chega primeiro.</h2>
+          <p>O Brasil é um dos países mais desiguais do mundo, e isso aparece também em quem cada jovem tem por perto para abrir a primeira porta. No início da carreira, a diferença entre avançar e ficar parado muitas vezes não é talento nem esforço.</p>
         </div>
-    </section>
 
-    <section id="como-funciona" class="section" style="background-color: var(--nevoa-verde); border-radius: 20px; padding: 60px 40px; margin-top: 40px; margin-bottom: 40px;">
-        <h2>Como a Conexão Acontece</h2>
-        <div class="grid">
-            <div style="text-align: center;">
-                <h3 style="color: var(--azul-mentoria); font-size: 1.5rem; margin-bottom: 10px;">1. Inscrição</h3>
-                <p>Você se cadastra informando sua área de interesse ou sua bagagem profissional para troca.</p>
-            </div>
-            <div style="text-align: center;">
-                <h3 style="color: var(--verde-mentoria); font-size: 1.5rem; margin-bottom: 10px;">2. Emparelhamento</h3>
-                <p>Conectamos mentores e mentorados com base em objetivos complementares e desafios reais.</p>
-            </div>
-            <div style="text-align: center;">
-                <h3 style="color: var(--azul-mentoria); font-size: 1.5rem; margin-bottom: 10px;">3. Crescimento</h3>
-                <p>Sessões estruturadas de troca genuína, aprendizado prático e aceleração de carreira.</p>
-            </div>
+        <div class="porque__dados">
+          <h3 class="porque__grupo">O cenário</h3>
+          <ul class="dados">
+            <li>
+              <span class="num">81%</span>
+              <p>dos jovens de 25 a 29 anos conseguiram o emprego atual por indicação.</p>
+              <p class="fonte">Fundação Itaú/Datafolha, 2026</p>
+            </li>
+            <li>
+              <span class="num">19,8%</span>
+              <p>dos jovens pretos ou pardos estão fora do estudo e do trabalho, contra 14% dos jovens brancos.</p>
+              <p class="fonte">IBGE, 2026</p>
+            </li>
+            <li>
+              <span class="num">24,8%</span>
+              <p>foi a evasão no ensino superior presencial em 2024.</p>
+              <p class="fonte">Semesp, Mapa do Ensino Superior, 2026</p>
+            </li>
+            <li>
+              <span class="num">51,9%</span>
+              <p>dos jovens que concluem os estudos não passam por nenhuma capacitação alinhada ao que o mercado pede.</p>
+              <p class="fonte">Revista Tópicos, 2024</p>
+            </li>
+          </ul>
+
+          <h3 class="porque__grupo">O que a mentoria muda</h3>
+          <div class="destaque">
+            <span class="num">+33%</span>
+            <p>de aumento médio na renda no início da carreira entre jovens que participaram de mentoria durante a graduação.</p>
+            <p class="fonte">Pesquisa Alumna/Exame, 2026</p>
+          </div>
+          <p class="porque__fecho">A mentoria funciona como um substituto direto do capital social que muitos jovens não herdam da família. O Brasil tem 46,6 milhões de jovens entre 15 e 29 anos, e 9,7 milhões deles estão no ensino superior (IBGE, PNAD Contínua, 2026). Cada ponto percentual de melhoria em empregabilidade ou renda nesse grupo alcança centenas de milhares de vidas.</p>
         </div>
+      </div>
     </section>
 
-    <section id="contato" class="section" style="text-align: center;">
-        <h2>Faça parte da nossa lista de lançamento</h2>
-        <p style="margin-bottom: 30px;">Estamos estruturando a nossa rede nacional. Deixe seu e-mail para ser avisado quando as vagas abrirem.</p>
-        
-        <form action="https://formspree.io/f/seu-codigo-aqui" method="POST" style="max-width: 450px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-            <input type="email" name="email" placeholder="Seu melhor e-mail" required style="padding: 14px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; outline: none;">
-            <button type="submit" class="btn" style="border: none; cursor: pointer;">Inscrever-me</button>
-        </form>
+    <!-- QUEM PARTICIPA -->
+    <section class="secao secao--nevoa" id="para-quem" aria-labelledby="t-quem">
+      <div class="contem contem--largo">
+        <div class="titulo-secao">
+          <h2 id="t-quem">Quem participa e o que ganha</h2>
+          <p>A Rede reúne cinco papéis. Mentorados e mentores se encontram para aprender juntos. Mentores de Negócios e Investidores Anjo ajudam as melhores ideias a ir mais longe.</p>
+        </div>
+
+        <div class="papeis">
+          <article class="papel papel--mentorado">
+            <p class="papel__grupo">Quem é orientado</p>
+            <h3>Estudante</h3>
+            <p class="papel__quem">Cursa graduação ou curso técnico e quer entender o mercado antes de entrar nele.</p>
+            <h4>O que ganha</h4>
+            <ul>
+              <li>Orientação de um profissional que já percorreu o caminho</li>
+              <li>Contatos fora do círculo de família e amigos</li>
+              <li>Clareza sobre carreira e próximos passos</li>
+              <li>A chance de transformar uma ideia em Plano de Negócio</li>
+            </ul>
+            <a class="papel__link" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Responder à pesquisa</a>
+          </article>
+
+          <article class="papel papel--mentorado">
+            <p class="papel__grupo">Quem é orientado</p>
+            <h3>Jovem profissional</h3>
+            <p class="papel__quem">Está nos primeiros anos de trabalho e tem dúvidas sobre decisões de carreira.</p>
+            <h4>O que ganha</h4>
+            <ul>
+              <li>Um interlocutor para as decisões dos primeiros anos</li>
+              <li>Retorno de quem tem mais experiência na área</li>
+              <li>Uma rede de contatos ampliada</li>
+              <li>Apoio para levar uma ideia de negócio adiante</li>
+            </ul>
+            <a class="papel__link" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Responder à pesquisa</a>
+          </article>
+
+          <article class="papel papel--mentor">
+            <p class="papel__grupo">Quem orienta</p>
+            <h3>Mentor</h3>
+            <p class="papel__quem">Profissional com experiência em sua área e vontade de orientar quem está começando.</p>
+            <h4>O que ganha</h4>
+            <ul>
+              <li>Um espaço para compartilhar o que aprendeu</li>
+              <li>Novas perspectivas de quem está chegando</li>
+              <li>Guias e frameworks para conduzir as conversas</li>
+              <li>Contribuição direta para reduzir a desigualdade de acesso</li>
+            </ul>
+            <a class="papel__link" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Responder à pesquisa</a>
+          </article>
+
+          <article class="papel papel--mentor">
+            <p class="papel__grupo">Quem orienta <span class="selo">selo adicional</span></p>
+            <h3>Mentor de Negócios</h3>
+            <p class="papel__quem">Mentor com vivência em negócios, que revisa e comenta os Planos de Negócio dos mentorados.</p>
+            <h4>O que ganha</h4>
+            <ul>
+              <li>Contato com ideias novas de jovens empreendedores</li>
+              <li>O papel de sinalizar planos com boa estrutura, inovação e impacto</li>
+              <li>A chance de ajudar bons projetos a ir além do papel</li>
+            </ul>
+            <a class="papel__link" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Responder à pesquisa</a>
+          </article>
+
+          <article class="papel papel--apoio">
+            <p class="papel__grupo">Quem apoia</p>
+            <h3>Investidor Anjo</h3>
+            <p class="papel__quem">Pessoa interessada em investir no futuro fundo de projetos da Rede.</p>
+            <h4>O que ganha</h4>
+            <ul>
+              <li>Acesso a projetos já avaliados por Mentores de Negócios</li>
+              <li>A oportunidade de apoiar ideias que ficam fora dos círculos habituais de investimento</li>
+            </ul>
+            <a class="papel__link" href="https://wa.me/5541999118887?text=Contato%20Landing%20Page%20-%20Rede%20Mentoria%20Brasil.%20Eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3A" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          </article>
+        </div>
+
+        <p class="aviso">O fundo anjo é uma visão da Rede e ainda não foi constituído. Esta página não oferece investimento.</p>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Rede Mentoria Brasil. Todos os direitos reservados.</p>
-        <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">Seguro, respeitoso, inclusivo e colaborativo.</p>
-    </footer>
+    <!-- IMPACTO -->
+    <section class="secao secao--verde-agua" id="impacto" aria-labelledby="t-impacto">
+      <div class="contem impacto">
+        <div class="impacto__intro">
+          <h2 id="t-impacto">O que muda para o país.</h2>
+          <p>Jovens mais críticos, curiosos e ativos, que assumem a responsabilidade pela própria vida, pela carreira e pela sociedade. É isso que a Rede quer acelerar, de forma segura, respeitosa, inclusiva e amorosa.</p>
+        </div>
+        <ul class="impacto__lista">
+          <li>
+            <h3>Acesso menos dependente de sobrenome</h3>
+            <p>Quem não herdou uma rede de contatos passa a ter acesso a profissionais experientes de diferentes áreas.</p>
+          </li>
+          <li>
+            <h3>Uma transição mais segura para o trabalho</h3>
+            <p>Autoconfiança, clareza de carreira e contatos novos reduzem o atrito entre o fim dos estudos e o primeiro emprego (Instituto Joule e MentorART, 2024/2025).</p>
+          </li>
+          <li>
+            <h3>Conhecimento que circula entre gerações</h3>
+            <p>A experiência de quem já chegou é preservada e ampliada, o que fortalece a capacidade do país de competir e colaborar numa economia globalizada.</p>
+          </li>
+          <li>
+            <h3>Ideias que ganham uma chance</h3>
+            <p>Mentorados podem desenvolver um Plano de Negócio revisado por Mentores de Negócios. A Rede pretende, no futuro, aproximar os melhores projetos de investidores interessados.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- PILOTO -->
+    <section class="secao secao--branca" id="piloto" aria-labelledby="t-piloto">
+      <div class="contem piloto">
+        <div class="piloto__texto">
+          <h2 id="t-piloto">O piloto está aberto.</h2>
+          <p>A Rede está em fase piloto. Os primeiros pares de mentor e mentorado são formados com apoio de ferramentas analíticas de pareamento de perfis, e o processo ainda é acompanhado manualmente.</p>
+          <p>Neste momento buscamos mentores, mentorados (estudantes e jovens profissionais) e Mentores de Negócios. A participação é gratuita e restrita a maiores de 18 anos.</p>
+          <p>Acompanhe as novidades no Instagram <a href="https://www.instagram.com/redementoriabrasil/" target="_blank" rel="noopener">@redementoriabrasil</a>.</p>
+        </div>
+
+        <div class="piloto__acoes">
+          <div class="acao">
+            <h3>Quero ser mentorado ou mentor</h3>
+            <p>Responda à pesquisa do piloto para que possamos formar o seu par de mentoria.</p>
+            <a class="btn btn--verde" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Responder à pesquisa</a>
+          </div>
+          <div class="acao">
+            <h3>Quero investir, patrocinar ou contribuir</h3>
+            <p>Pessoas, empresas e instituições de ensino podem apoiar a Rede. As formas de apoio ainda estão em definição, então vale conversar.</p>
+            <a class="btn btn--contorno" href="https://wa.me/5541999118887?text=Contato%20Landing%20Page%20-%20Rede%20Mentoria%20Brasil.%20Eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3A" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURANÇA -->
+    <section class="secao secao--nevoa" id="seguranca" aria-labelledby="t-seg">
+      <div class="contem">
+        <div class="titulo-secao">
+          <h2 id="t-seg">Segurança e conduta</h2>
+          <p>Mentoria é uma relação de confiança. Por isso, a Rede define regras claras para os dois lados.</p>
+        </div>
+        <div class="seguranca">
+          <div>
+            <h3>Somente para maiores de 18 anos</h3>
+            <p>A mentoria envolve conversas individuais e continuadas. Por isso, nesta fase, a participação é restrita a adultos, o que protege os participantes e a Rede.</p>
+          </div>
+          <div>
+            <h3>Código de conduta para os dois lados</h3>
+            <p>Mentores e mentorados assumem o mesmo compromisso de respeito, confidencialidade, limites de atuação e autonomia nas próprias decisões.</p>
+          </div>
+          <div>
+            <h3>Canal para reportar irregularidades</h3>
+            <p>Qualquer participante pode relatar comportamento inadequado ou descumprimento do código de conduta. Cada caso é analisado pela coordenação da Rede.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="secao secao--branca" id="faq" aria-labelledby="t-faq">
+      <div class="contem faq">
+        <div class="faq__intro">
+          <h2 id="t-faq">Perguntas frequentes</h2>
+          <p>Não encontrou o que procurava? Escreva para <a href="mailto:contato@redementoriabrasil.com.br">contato@redementoriabrasil.com.br</a>.</p>
+        </div>
+
+        <div class="faq__lista">
+          <details>
+            <summary>O que é a Rede Mentoria Brasil?</summary>
+            <div class="resposta">
+              <p>É uma plataforma que conecta jovens em início de carreira a profissionais experientes em suas áreas de atuação. O objetivo é que os dois lados descubram novas possibilidades, aprendam, resolvam problemas e criem juntos. Hoje a Rede está em fase piloto.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>O que é mentoria?</summary>
+            <div class="resposta">
+              <p>Mentoria é uma relação de orientação entre alguém com mais experiência (o mentor) e alguém que está começando (o mentorado). Ela acontece em três momentos: um alinhamento inicial, encontros periódicos e um encerramento combinado.</p>
+              <p>O papel de cada pessoa:</p>
+              <ul>
+                <li><strong>Mentorado:</strong> traz dúvidas e objetivos e toma as próprias decisões.</li>
+                <li><strong>Mentor:</strong> escuta, compartilha experiência e faz boas perguntas, sem decidir pelo mentorado.</li>
+                <li><strong>Mentor de Negócios:</strong> mentor com vivência em negócios, que revisa e comenta os Planos de Negócio dos mentorados.</li>
+                <li><strong>Investidor Anjo:</strong> pessoa interessada em investir no futuro fundo de projetos da Rede.</li>
+              </ul>
+              <p>Os benefícios: o mentorado ganha clareza de carreira, autoconfiança e contatos novos. O mentor tem a chance de transmitir o que aprendeu e de conhecer novas perspectivas. A sociedade ganha um caminho com menos dependência de indicação para quem está começando.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Tem algum custo?</summary>
+            <div class="resposta">
+              <p>Não. A participação no piloto é gratuita.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Quem pode ser mentorado?</summary>
+            <div class="resposta">
+              <p>Estudantes e jovens profissionais em início de carreira, maiores de 18 anos.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Quem pode ser mentor?</summary>
+            <div class="resposta">
+              <p>Profissionais com experiência em sua área de atuação, maiores de 18 anos e com disposição para orientar. Quem tem vivência em negócios também pode atuar como Mentor de Negócios.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Quanto tempo a mentoria exige?</summary>
+            <div class="resposta">
+              <p>A duração e a frequência dos encontros são definidas na sessão inicial entre mentorado e mentor.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Como é feito o pareamento entre mentor e mentorado?</summary>
+            <div class="resposta">
+              <p>Com ferramentas analíticas de pareamento de perfis, que consideram o perfil de cada participante. No piloto, o processo é acompanhado manualmente.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>O que é o Plano de Negócio?</summary>
+            <div class="resposta">
+              <p>É um material que os mentorados que quiserem podem desenvolver a partir de uma ideia própria. Ele pode ser revisado por Mentores de Negócios, que dão retorno e sinalizam os planos com boa estrutura, inovação e impacto.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>A mentoria garante emprego ou vaga?</summary>
+            <div class="resposta">
+              <p>Não. A mentoria oferece orientação, clareza de carreira e novos contatos. Ela não substitui um processo seletivo nem promete vaga.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Posso participar se tenho menos de 18 anos?</summary>
+            <div class="resposta">
+              <p>Não neste momento. A participação é restrita a maiores de 18 anos.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>É seguro participar?</summary>
+            <div class="resposta">
+              <p>A Rede adota um código de conduta para mentores e mentorados e mantém um canal para reportar irregularidades. Veja mais em <a href="#seguranca">Segurança e conduta</a>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Como meus dados são tratados?</summary>
+            <div class="resposta">
+              <p>Os dados informados na pesquisa são usados para o piloto, isto é, para contato e formação de pares de mentoria. O tratamento segue a Lei Geral de Proteção de Dados (LGPD). Para pedir informações, correção ou exclusão dos seus dados, escreva para <a href="mailto:contato@redementoriabrasil.com.br">contato@redementoriabrasil.com.br</a>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Como posso apoiar ou patrocinar a Rede?</summary>
+            <div class="resposta">
+              <p>As formas de apoio ainda estão em definição. Se você quer investir, patrocinar ou contribuir de outra maneira, fale conosco pelo <a href="https://wa.me/5541999118887?text=Contato%20Landing%20Page%20-%20Rede%20Mentoria%20Brasil.%20Eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3A" target="_blank" rel="noopener">WhatsApp</a>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section class="final" aria-labelledby="t-final">
+      <div class="contem final__interno">
+        <div class="final__selo"><img src="assets/img/logo-traco.webp" width="320" height="320" alt=""></div>
+        <div class="final__texto">
+          <h2 id="t-final">Faça parte dos primeiros pares da Rede.</h2>
+          <p>Responda à pesquisa e conte um pouco sobre você. Se quiser apoiar de outra forma, fale conosco.</p>
+          <div class="acoes">
+            <a class="btn btn--verde" href="https://rede-mentoria-brasil.zite.so" target="_blank" rel="noopener">Quero participar do piloto</a>
+            <a class="btn btn--contorno" href="https://wa.me/5541999118887?text=Contato%20Landing%20Page%20-%20Rede%20Mentoria%20Brasil.%20Eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3A" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="contem rodape__interno">
+      <div class="rodape__marca">
+        <p class="rodape__nome">Rede Mentoria Brasil</p>
+        <p>Conectando experiência a oportunidade.</p>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <ul>
+          <li><a href="mailto:contato@redementoriabrasil.com.br">contato@redementoriabrasil.com.br</a></li>
+          <li><a href="https://www.instagram.com/redementoriabrasil/" target="_blank" rel="noopener">Instagram @redementoriabrasil</a></li>
+          <li><a href="https://wa.me/5541999118887?text=Contato%20Landing%20Page%20-%20Rede%20Mentoria%20Brasil.%20Eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3A" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="rodape__notas">
+        <h2>Avisos</h2>
+        <p><strong>Idade mínima:</strong> a participação é restrita a maiores de 18 anos.</p>
+        <p><strong>Privacidade e LGPD:</strong> os dados informados na pesquisa são usados apenas para o piloto (contato e formação de pares de mentoria) e tratados conforme a Lei Geral de Proteção de Dados. Para pedir informações, correção ou exclusão, escreva para o e-mail de contato.</p>
+        <p><strong>Fundo anjo:</strong> é uma visão da Rede e ainda não foi constituído. Esta página não oferece investimento.</p>
+      </div>
+    </div>
+    <p class="rodape__copy">© 2026 Rede Mentoria Brasil. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
