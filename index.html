@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Mentoria Brasil | Conectando Jovens e Profissionais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-mentoria: #285B8A;
+            --verde-mentoria: #278865;
+            --azul-profundo: #205380;
+            --verde-profundo: #187858;
+            --nevoa: #F5F6F1;
+            --nevoa-verde: #E5EFEE;
+            --tinta: #1A2B3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--nevoa);
+            color: var(--tinta);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--azul-mentoria);
+        }
+
+        .logo-area img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-area span {
+            color: var(--verde-mentoria);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--tinta);
+            margin-left: 24px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul-mentoria);
+        }
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--nevoa) 0%, var(--nevoa-verde) 100%);
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--azul-mentoria);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--tinta);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background-color: var(--verde-mentoria);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(39, 136, 101, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--verde-profundo);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--azul-mentoria);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-top: 5px solid var(--azul-mentoria);
+        }
+
+        .card.verde {
+            border-top-color: var(--verde-mentoria);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--tinta);
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background-color: var(--azul-profundo);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { padding: 15px 20px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="images/logo.png" alt="Rede Mentoria Brasil">
+            REDE MENTORIA <span>BRASIL</span>
+        </div>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#como-funciona">Como Funciona</a>
+            <a href="#contato" style="color: var(--verde-mentoria);">Participe</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Conectando o futuro através da experiência</h1>
+        <p>Aceleramos o desenvolvimento de jovens e profissionais em início de carreira, unindo suas inquietações a mentores experientes em todo o Brasil.</p>
+        <a href="#contato" class="btn">Quero fazer parte da rede</a>
+    </section>
+
+    <section id="sobre" class="section">
+        <h2>O Propósito da Rede</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Para Mentorados</h3>
+                <p>Um espaço seguro, inclusivo e amoroso para destravar dúvidas, resolver problemas práticos e acelerar sua jornada profissional com quem já trilhou o caminho.</p>
+            </div>
+            <div class="card verde">
+                <h3>Para Mentores</h3>
+                <p>Oportunidade de compartilhar bagagem, impulsionar novos talentos e co-criar soluções inovadoras lado a lado com a nova geração.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="section" style="background-color: var(--nevoa-verde); border-radius: 20px; padding: 60px 40px; margin-top: 40px; margin-bottom: 40px;">
+        <h2>Como a Conexão Acontece</h2>
+        <div class="grid">
+            <div style="text-align: center;">
+                <h3 style="color: var(--azul-mentoria); font-size: 1.5rem; margin-bottom: 10px;">1. Inscrição</h3>
+                <p>Você se cadastra informando sua área de interesse ou sua bagagem profissional para troca.</p>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="color: var(--verde-mentoria); font-size: 1.5rem; margin-bottom: 10px;">2. Emparelhamento</h3>
+                <p>Conectamos mentores e mentorados com base em objetivos complementares e desafios reais.</p>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="color: var(--azul-mentoria); font-size: 1.5rem; margin-bottom: 10px;">3. Crescimento</h3>
+                <p>Sessões estruturadas de troca genuína, aprendizado prático e aceleração de carreira.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section" style="text-align: center;">
+        <h2>Faça parte da nossa lista de lançamento</h2>
+        <p style="margin-bottom: 30px;">Estamos estruturando a nossa rede nacional. Deixe seu e-mail para ser avisado quando as vagas abrirem.</p>
+        
+        <form action="https://formspree.io/f/seu-codigo-aqui" method="POST" style="max-width: 450px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <input type="email" name="email" placeholder="Seu melhor e-mail" required style="padding: 14px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; outline: none;">
+            <button type="submit" class="btn" style="border: none; cursor: pointer;">Inscrever-me</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rede Mentoria Brasil. Todos os direitos reservados.</p>
+        <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">Seguro, respeitoso, inclusivo e colaborativo.</p>
+    </footer>
+
+</body>
+</html>
